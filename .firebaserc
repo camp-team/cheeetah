@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-cheeetah": {
+      "hosting": {
+        "cheeetah": [
+          "ng-cheeetah"
+        ]
+      }
+    }
+  }
+}
