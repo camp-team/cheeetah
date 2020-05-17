@@ -1,0 +1,19 @@
+@import '../assets/css/layout';
+
+
+mat-sidenav {
+  width: 256px;
+
+  @include sp {
+    display: none;
+  }
+}
+
+.mat-sidenav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
