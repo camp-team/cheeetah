@@ -15,5 +15,20 @@ mat-sidenav {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow: hidden;
   background: #fff;
+
+  @include sp {
+    position: relative;
+  }
+
+}
+
+
+.test-height {
+  height: 2000px;
 }

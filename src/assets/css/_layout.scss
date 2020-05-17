@@ -1,5 +1,6 @@
 $breakpoint-sp: 425px;
 $breakpoint-tab: 768px;
+$breakpoint-pc: 426px;
 
 @mixin sp {
   @media screen and (max-width: $breakpoint-sp) {
@@ -13,10 +14,8 @@ $breakpoint-tab: 768px;
   }
 }
 
-// @include tab {
-//   background-color: gray;
-// }
-
-// @include sp {
-//   background-color: blue;
-// }
+@mixin pc {
+  @media screen and (min-width: $breakpoint-pc) {
+    @content;
+  }
+}
