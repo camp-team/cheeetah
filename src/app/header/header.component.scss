@@ -1,0 +1,130 @@
+@import '../../assets/css/layout';
+@import '../../assets/css/color';
+
+
+.header {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  padding: 20px 0px 20px;
+  margin-bottom: 30px;
+  background: white top/cover;
+  color: black;
+}
+
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  margin: 20px 0 40px;
+
+  @include pc {
+    display: none;
+  }
+}
+
+
+.login-icon {
+  background-color: #efefef;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.my-addrress {
+  display: block;
+  padding: 0 42px;
+  font-size: 12px;
+  margin-bottom: 12px;
+
+  @include pc {
+    display: none;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.search {
+  display: flex;
+  padding: 0;
+  width: 800px;
+}
+
+.tag-search {
+  display: block;
+  margin-right: 24px;
+
+  @include sp {
+    display: none;
+  }
+}
+
+.search-box {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  margin-right: 16px;
+  margin-top: 0px;
+
+  &__input {
+    line-height: 32px;
+    margin: 0;
+    outline: none;
+    background: none;
+
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 0 42px 0 16px;
+    box-sizing: border-box;
+    appearance: none;
+    border: 1px solid rgba(0, 0, 0, .12);
+    width: 100%;
+    display: block;
+    color: rgba(0, 0, 0, .76);
+  }
+
+  &__btn {
+    line-height: 32px;
+    margin: 0;
+    outline: none;
+    background: none;
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 8px;
+    border: none;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, .32);
+  }
+}
+
+.cart {
+  display: block;
+
+  a {
+    padding: 8px;
+  }
+
+  @include sp {
+    display: none;
+  }
+}

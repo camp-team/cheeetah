@@ -1,0 +1,43 @@
+@import '../../assets/css/layout';
+@import '../../assets/css/color';
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-gray;
+  display: grid;
+  z-index: 1000;
+  display: flex;
+  color: #fff;
+  padding-bottom: calc(env(safe-area-inset-bottom) - 20px);
+  border-radius: 24px 24px 0 0;
+
+  @include pc {
+    display: none;
+  }
+
+  >* {
+    flex: 1;
+    padding: 16px 0 8px 0;
+  }
+}
+
+.bottom-nav-item {
+  text-align: center;
+  opacity: .76;
+  color: black;
+  outline: none;
+
+  &__icon {
+    vertical-align: bottom;
+  }
+
+  &__label {
+    font-size: 9px;
+    margin: 4px 0 2px 0;
+    display: block;
+    line-height: 1;
+  }
+}
