@@ -1,12 +1,12 @@
 @import '../../assets/css/layout';
-
+@import '../../assets/css/color';
 
 .bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #efefef;
+  background: $color-gray;
   display: grid;
   z-index: 1000;
   display: flex;

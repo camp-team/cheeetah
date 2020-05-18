@@ -8,11 +8,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SidebarComponent, BottomNavComponent],
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    SidebarComponent,
+    BottomNavComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +29,8 @@ import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatButtonModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
