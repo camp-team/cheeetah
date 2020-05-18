@@ -1,4 +1,5 @@
 @import '../assets/css/layout';
+@import '../assets/css/color';
 
 
 mat-sidenav {
@@ -29,6 +30,8 @@ mat-sidenav {
 }
 
 
+
 .test-height {
   height: 2000px;
+  background-color: white;
 }

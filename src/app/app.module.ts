@@ -13,6 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     SidebarComponent,
     BottomNavComponent,
     FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

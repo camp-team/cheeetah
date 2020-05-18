@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="topbar">
+    <div class="logo">
+      <a routerLink="/" class="logo">
+        <img src="../assets/img/logo.svg" alt="CHEEETAH" />
+      </a>
+    </div>
+    <div class="login">
+      <a routerLink="/">
+        <mat-icon role="img" class="login-icon">person_add</mat-icon>
+      </a>
+    </div>
+  </div>
+  <div class="my-addrress">
+    いますぐに注文する→
+    <span>港区南麻布3丁目 </span>
+  </div>
+  <div class="navbar">
+    <div class="search">
+      <div class="tag-search">
+        <button mat-stroked-button>
+          # 近所のサービスを探す
+        </button>
+      </div>
+      <div class="search-box">
+        <form action="">
+          <input
+            type="text"
+            class="search-box__input"
+            placeholder="カテゴリー・サービス名・住所などで検索する"
+          />
+          <button class="search-box__btn">
+            <mat-icon role="img">search</mat-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="cart">
+      <a routerLink="/">
+        <mat-icon role="img" matBadge="3" matBadgeColor="warn">
+          shopping_cart
+        </mat-icon>
+      </a>
+    </div>
+  </div>
+</header>
