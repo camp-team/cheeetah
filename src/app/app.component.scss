@@ -2,15 +2,7 @@
 @import '../assets/css/color';
 
 
-mat-sidenav {
-  width: 256px;
-
-  @include sp {
-    display: none;
-  }
-}
-
-.mat-sidenav-container {
+mat-sidenav-container {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -29,9 +21,20 @@ mat-sidenav {
 
 }
 
+mat-sidenav {
+  width: 256px;
 
+  @include sp {
+    display: none;
+  }
+}
 
-.test-height {
-  height: 2000px;
-  background-color: white;
+mat-sidenav-content {
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1;
 }
