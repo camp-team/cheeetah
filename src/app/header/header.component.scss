@@ -25,6 +25,10 @@
   @include pc {
     display: none;
   }
+
+  @include sp {
+    padding: 0 24px;
+  }
 }
 
 
@@ -44,6 +48,10 @@
     display: none;
   }
 
+  @include sp {
+    padding: 0 26px;
+  }
+
   span {
     font-weight: 700;
   }
@@ -55,6 +63,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+
+  @include sp {
+    padding: 0 24px;
+  }
 }
 
 .search {
@@ -78,6 +90,10 @@
   width: 100%;
   margin-right: 16px;
   margin-top: 0px;
+
+  @include sp {
+    margin-right: 0px;
+  }
 
   &__input {
     line-height: 34px;
