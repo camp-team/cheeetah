@@ -2,6 +2,8 @@
 @import 'variables';
 @import 'mixins';
 
+@import '~swiper/dist/css/swiper.min.css';
+
 
 .main {
   padding: 40px;
@@ -29,12 +31,17 @@
   width: 340px;
   margin: 0 auto;
 
+  @include sp {
+    min-width: 300px;
+    width: 95%;
+  }
+
   &__slides {
-    margin: 24px 0 0 24px;
+    // margin: 24px 0 0 24px;
+    margin: 24px 24px 0 24px;
   }
 
   &__slide {
-    // position: relative;
 
     img {
       width: 250px;
@@ -119,8 +126,8 @@
     .mat-icon {
       font-size: 20px;
       color: rgb(244, 211, 49);
-      padding-top: 2px;
-      margin-right: -2px;
+      padding-top: 0px;
+      margin-right: 0px;
     }
 
     span {
@@ -138,6 +145,41 @@
     font-weight: bold;
     letter-spacing: 1px;
     color: #999;
+
+    @include sp {
+      padding-top: 2px;
+    }
   }
 
+}
+
+
+.swiper-slide {
+  img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+::ng-deep .swiper-button-next,
+::ng-deep .swiper-button-prev,
+::ng-deep .swiper-pagination {
+  @include sp {
+    display: none;
+  }
+}
+
+
+.pager {
+  text-align: center;
+
+  ::ng-deep span {
+    margin: 0 4px;
+  }
+
+  @include sp {
+    display: none;
+  }
 }
