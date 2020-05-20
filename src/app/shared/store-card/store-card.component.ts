@@ -17,7 +17,9 @@ export class StoreCardComponent implements OnInit {
     // pagination: true,
     pagination: {
       el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
+      // bulletActiveClass: 'swiper-pagination-bullet-active',
     },
     slidesPerView: 1.3,
     spaceBetween: 16,

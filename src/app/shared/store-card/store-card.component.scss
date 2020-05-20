@@ -203,23 +203,49 @@
   }
 }
 
-::ng-deep .swiper-button-next,
-::ng-deep .swiper-button-prev,
-::ng-deep .swiper-pagination {
-  @include sp {
-    display: none;
-  }
-}
+// ::ng-deep .swiper-button-next,
+// ::ng-deep .swiper-button-prev,
+// ::ng-deep .swiper-pagination {
+//   @include sp {
+//     display: none;
+//   }
+// }
+
+// ::ng-deep .swiper-pagination {
+//   text-align: left !important;
+// }
+
+// ::ng-deep .swiper-container-horizontal>.swiper-pagination-bullets {
+//   bottom: 1px !important;
+//   left: 4px !important;
+// }
+
+// ::ng-deep .swiper-pagination-bullet {
+//   width: 8px;
+//   height: 8px;
+//   border: 0px !important;
+//   background: black !important;
+//   opacity: 0.5 !important;
+//   margin: 0px !important;
+// }
 
 
-.pager {
-  text-align: center;
+// ::ng-deep .swiper-pagination-bullet-active {
+//   width: 8px;
+//   height: 8px;
+//   background: #ffffff !important;
+//   opacity: 1 !important;
+// }
 
-  ::ng-deep span {
-    margin: 0 4px;
-  }
 
-  @include sp {
-    display: none;
-  }
-}
+// .pager {
+//   text-align: center;
+
+//   ::ng-deep span {
+//     margin: 0 4px;
+//   }
+
+//   @include sp {
+//     display: none;
+//   }
+// }
