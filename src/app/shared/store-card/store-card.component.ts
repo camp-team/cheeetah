@@ -23,7 +23,7 @@ export class StoreCardComponent implements OnInit {
     spaceBetween: 16,
     initialSlide: 0,
     // loop: true,
-    autoHeight: true,
+    // autoHeight: true,
   };
 
   storeSlideId = 1;

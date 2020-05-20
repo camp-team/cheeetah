@@ -3,6 +3,11 @@
     <div class="store-card" *ngFor="let number of storeNumbers">
       <div class="store-card__slides">
         <div>
+          <div class class="store-card__fav">
+            <button mat-icon-button>
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
           <swiper [config]="config" [(index)]="storeSlideId[number]">
             <div *ngFor="let slide of [1, 2, 3]">
               <img
@@ -40,7 +45,7 @@
         </div>
         <div class="store-card__info">
           <div class="store-card__time">
-            25-30 min
+            <span>25-30 min</span>
           </div>
           <div class="store-card__rating">
             <mat-icon inline>grade</mat-icon>
