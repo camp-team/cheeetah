@@ -14,7 +14,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { SharedModule } from './shared/shared.module';
+// import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { SharedModule } from './shared/shared.module';
     MatIconModule,
     MatButtonModule,
     MatBadgeModule,
-    SharedModule,
+    // SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
