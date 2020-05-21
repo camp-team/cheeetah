@@ -30,15 +30,23 @@
 
 .store-card {
   border-radius: 12px;
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 20px #eee;
+  // box-shadow: 0 0 10px #ccc;
   overflow: hidden;
   width: 340px;
   margin: 0 auto;
+  position: relative;
 
   // @include sp {
   //   min-width: 300px;
   //   width: 95%;
   // }
+
+  &:hover {
+    // box-shadow: 0 0 20px #eee;
+    box-shadow: 0 0 10px #ccc;
+
+  }
 
   &__slides {
     position: relative;
