@@ -1,60 +1,49 @@
-<div class="main">
-  <div class="store-cards">
-    <div class="store-card" *ngFor="let number of storeNumbers">
-      <div class="store-card__slides">
-        <div>
-          <div class class="store-card__fav">
-            <button mat-icon-button>
-              <mat-icon>favorite</mat-icon>
-            </button>
-          </div>
-          <swiper [config]="config" [(index)]="storeSlideId[number]">
-            <div *ngFor="let slide of [1, 2, 3]">
-              <img
-                src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-                alt=""
-              />
-            </div>
-          </swiper>
-          <!-- <div class="pager"></div> -->
-          <!-- <div class="swiper-next"></div> -->
-          <!-- <div class="swiper-prev"></div> -->
+<div class="store-cards">
+  <div class="store-card" *ngFor="let number of storeNumbers">
+    <div class="store-card__slides">
+      <div>
+        <div class class="store-card__fav">
+          <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+          </button>
         </div>
-        <!-- <div class="store-card__slide">
-          <img
-            src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-            alt=""
-          />
-        </div> -->
+        <swiper [config]="config" [(index)]="storeSlideId[number]">
+          <div *ngFor="let slide of [1, 2, 3]">
+            <img
+              src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+              alt=""
+            />
+          </div>
+        </swiper>
       </div>
-      <!-- <div class="store-card__thumbnails"></div> -->
-      <div class="store-card__head">
-        <div class="store-card__name">
-          tricia 表参道 トリシア ネイルサロン
-        </div>
-        <div class="store-card__avatar">
-          <img
-            src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-            alt=""
-          />
-        </div>
+    </div>
+    <!-- <div class="store-card__thumbnails"></div> -->
+    <div class="store-card__head">
+      <div class="store-card__name">
+        tricia 表参道 トリシア ネイルサロン
       </div>
-      <div class="store-card__body">
-        <div class="store-card__desc">
-          緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。
+      <div class="store-card__avatar">
+        <img
+          src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="store-card__body">
+      <div class="store-card__desc">
+        緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。
+      </div>
+      <div class="store-card__info">
+        <div class="store-card__time">
+          <span>25-30 min</span>
         </div>
-        <div class="store-card__info">
-          <div class="store-card__time">
-            <span>25-30 min</span>
-          </div>
-          <div class="store-card__rating">
-            <mat-icon inline>grade</mat-icon>
-            <span class="store-card__score">4.5</span>
-            <span class="store-card__reviews">(38)</span>
-          </div>
-          <div class="store-card__category">
-            #ネイルサロン
-          </div>
+        <div class="store-card__rating">
+          <mat-icon inline>grade</mat-icon>
+          <span class="store-card__score">4.5</span>
+          <span class="store-card__reviews">(38)</span>
+        </div>
+        <div class="store-card__category">
+          #ネイルサロン
         </div>
       </div>
     </div>
