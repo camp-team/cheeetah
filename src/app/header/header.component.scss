@@ -9,9 +9,13 @@
   width: 100%;
 
   padding: 20px 0px 20px;
-  margin-bottom: 30px;
+  margin: 16px 0 8px;
   background: white top/cover;
   color: black;
+
+  @include sp {
+    margin: 0 0 24px 0;
+  }
 }
 
 

@@ -5,12 +5,16 @@
 @import '~swiper/dist/css/swiper.min.css';
 
 
-.main {
+.container {
   padding: 40px;
 
   @include sp {
     padding: 16px;
   }
+}
+
+.heading {
+  margin-bottom: 16px;
 }
 
 .store-cards {
