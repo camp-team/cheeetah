@@ -91,5 +91,11 @@
     font-size: 14px;
     top: 2px;
     position: relative;
+
+    @include sp {
+      top: 3px;
+    }
   }
+
+
 }
