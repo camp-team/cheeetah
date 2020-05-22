@@ -8,16 +8,40 @@
   <div class="member-wrap">
     <div class="member" *ngIf="user$ | async as user; else default">
       <div class="member__signup">
-        <div class="member__signup-button">
+        <div
+          class="member__signup-button"
+          mat-mini-fab
+          [matMenuTriggerFor]="menu"
+        >
           <img src="../../assets/img/panther.svg" alt="" />
         </div>
       </div>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">
+          <mat-icon>face</mat-icon>
+          <span>マイページ</span>
+        </button>
+        <button mat-menu-item routerLink="/create">
+          <mat-icon>fiber_new</mat-icon>
+          <span>ストア作成</span>
+        </button>
+        <button (click)="logout(user.uid)" mat-menu-item>
+          <mat-icon> exit_to_app</mat-icon>
+          <span>ログアウト</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="/">
+          <mat-icon>settings</mat-icon>
+          <span>設定</span>
+        </button>
+      </mat-menu>
+
       <div class="member__status">
         <div class="member__logout">
-          <button *ngIf="user$ | async as user" (click)="logout(user.uid)">
-            ログアウト
-          </button>
-          <span>Hello, Anonymous</span>
+          <p>Hello, <span>Anonymous</span></p>
+        </div>
+        <div class="member__order">
+          <a routerLink="/order"><button>いますぐ注文する</button></a>
         </div>
       </div>
     </div>

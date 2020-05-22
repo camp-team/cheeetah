@@ -35,6 +35,19 @@
   }
 }
 
+.login-button {
+  width: 24px;
+  padding: 8px;
+  background-color: $color-gray;
+  border-radius: 8px;
+  margin: 0 auto;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 
 .login-icon {
   background-color: $color-gray;
