@@ -9,23 +9,14 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 export class StoreCardComponent implements OnInit {
   config: SwiperConfigInterface = {
     direction: 'horizontal',
-    // navigation: true,
-    // navigation: {
-    //   nextEl: '.swiper-next',
-    //   prevEl: '.swiper-prev',
-    // },
-    // pagination: true,
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
       clickable: true,
-      // bulletActiveClass: 'swiper-pagination-bullet-active',
     },
     slidesPerView: 1.3,
     spaceBetween: 16,
     initialSlide: 0,
-    // loop: true,
-    // autoHeight: true,
   };
 
   storeSlideId = 1;

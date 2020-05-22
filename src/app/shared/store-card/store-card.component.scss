@@ -31,19 +31,12 @@
 .store-card {
   border-radius: 12px;
   box-shadow: 0 0 20px #eee;
-  // box-shadow: 0 0 10px #ccc;
   overflow: hidden;
   width: 340px;
   margin: 0 auto;
   position: relative;
 
-  // @include sp {
-  //   min-width: 300px;
-  //   width: 95%;
-  // }
-
   &:hover {
-    // box-shadow: 0 0 20px #eee;
     box-shadow: 0 0 10px #ccc;
   }
 
@@ -94,7 +87,6 @@
   }
 
   &__thumbnails {
-    // height: 200px;
     padding-bottom: 52.5%;
     display: block;
     background: #eee center/cover;
@@ -110,17 +102,14 @@
   }
 
   &__name {
-    font-weight: bold;
-    font-size: 16px;
-    width: 260px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    // @include sp {
-    //   min-width: 230px;
-    //   width: 90%;
-    // }
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   &__avatar {
@@ -169,10 +158,17 @@
   }
 
   &__rating {
-    display: flex;
-    align-items: center;
     margin-right: 8px;
-    font-size: 12px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    li {
+      font-size: 14px;
+    }
 
     .mat-icon {
       font-size: 20px;
@@ -181,9 +177,6 @@
       margin-right: 0px;
     }
 
-    span {
-      font-size: 14px;
-    }
   }
 
   &__score {
@@ -217,50 +210,3 @@
     }
   }
 }
-
-// ::ng-deep .swiper-button-next,
-// ::ng-deep .swiper-button-prev,
-// ::ng-deep .swiper-pagination {
-//   @include sp {
-//     display: none;
-//   }
-// }
-
-// ::ng-deep .swiper-pagination {
-//   text-align: left !important;
-// }
-
-// ::ng-deep .swiper-container-horizontal>.swiper-pagination-bullets {
-//   bottom: 1px !important;
-//   left: 4px !important;
-// }
-
-// ::ng-deep .swiper-pagination-bullet {
-//   width: 8px;
-//   height: 8px;
-//   border: 0px !important;
-//   background: black !important;
-//   opacity: 0.5 !important;
-//   margin: 0px !important;
-// }
-
-
-// ::ng-deep .swiper-pagination-bullet-active {
-//   width: 8px;
-//   height: 8px;
-//   background: #ffffff !important;
-//   opacity: 1 !important;
-// }
-
-
-// .pager {
-//   text-align: center;
-
-//   ::ng-deep span {
-//     margin: 0 4px;
-//   }
-
-//   @include sp {
-//     display: none;
-//   }
-// }
