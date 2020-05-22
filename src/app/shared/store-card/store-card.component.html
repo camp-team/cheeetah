@@ -1,0 +1,56 @@
+<div class="store-cards">
+  <div class="store-card" *ngFor="let number of storeNumbers">
+    <a routerLink="/" class="store-card__link">
+      <div class="store-card__slides">
+        <div>
+          <div class class="store-card__fav">
+            <button mat-icon-button>
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+          <swiper [config]="config" [(index)]="storeSlideId[number]">
+            <div *ngFor="let slide of [1, 2, 3]">
+              <img
+                src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+                alt=""
+              />
+            </div>
+          </swiper>
+        </div>
+      </div>
+      <div class="store-card__head">
+        <div class="store-card__name">
+          <p>tricia 表参道 トリシア ネイルサロン</p>
+        </div>
+        <div class="store-card__avatar">
+          <img
+            src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="store-card__body">
+        <div class="store-card__desc">
+          <p>
+            緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。
+          </p>
+        </div>
+        <div class="store-card__info">
+          <div class="store-card__time">
+            <p>25-30 min</p>
+          </div>
+          <div class="store-card__rating">
+            <ul>
+              <li><mat-icon inline>grade</mat-icon></li>
+              <li class="store-card__score">4.5</li>
+              <li class="store-card__reviews">(38)</li>
+            </ul>
+          </div>
+          <div class="store-card__category">
+            <p>#ネイルサロン</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
