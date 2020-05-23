@@ -35,6 +35,12 @@
   }
 }
 
+.logo {
+  @include sp {
+    padding-bottom: 3px;
+  }
+}
+
 .login-button {
   width: 24px;
   padding: 8px;
