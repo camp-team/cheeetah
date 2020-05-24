@@ -25,6 +25,7 @@ export class StoreCardComponent implements OnInit {
 
   stores$ = this.storeService.getStores();
   users$ = this.storeService.getUsers();
+  // slides$ = this.storeService.getSlides();
 
   constructor(private storeService: StoreService) {}
 
