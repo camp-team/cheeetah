@@ -1,14 +1,14 @@
 import { firestore } from 'firebase';
 
 export interface Store {
-  storeId: string;
-  createdAt: firestore.Timestamp;
+  ownerId: string;
   name: string;
   description: string;
+  category: string;
+  slide: string;
+  // avatarURL?: string;
+  // createdAt?: firestore.Timestamp;
   // time: string;
   // rating: number;
   // reviews: number;
-  // category: string;
-  // avatarURL: string;
-  // slideURL: string;
 }
