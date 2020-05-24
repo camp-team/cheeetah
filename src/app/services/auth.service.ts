@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { firestore } from 'firebase/app';
+import { firestore, User } from 'firebase/app';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +12,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AuthService {
   user$ = this.afAuth.user;
 
+  afUser$: Observable<User> = this.afAuth.user;
+  uid: string;
+
   constructor(
     private afAuth: AngularFireAuth,
+    private router: Router,
     private db: AngularFirestore,
     private snackBar: MatSnackBar
-  ) {}
+  ) {
+    this.afUser$.subscribe((user) => {
+      this.uid = user && user.uid;
+    });
+  }
 
   login() {
     return this.afAuth.signInAnonymously().then((result) => {
@@ -22,7 +32,7 @@ export class AuthService {
         uid: result.user.uid,
         createdAt: firestore.Timestamp.now(),
       });
-      this.snackBar.open('ログインしました！🎉', null, {
+      this.snackBar.open('Hello！🎉', null, {
         duration: 2000,
       });
     });
@@ -34,5 +44,6 @@ export class AuthService {
         duration: 2000,
       });
     });
+    this.router.navigateByUrl('/');
   }
 }
