@@ -1,0 +1,135 @@
+@import 'layout';
+@import 'variables';
+@import 'mixins';
+
+
+.container {
+  padding: 40px;
+
+  @include sp {
+    padding: 16px;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 24px;
+
+  @include sp {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+
+    span {
+      display: flex;
+      position: relative;
+      align-items: center;
+      height: 32px;
+      width: 200px;
+      padding-top: 8px;
+
+      @include sp {
+        padding-top: 3px;
+      }
+    }
+
+    em {
+      display: block;
+      font-style: normal;
+      font-size: 17px;
+      letter-spacing: 1px;
+      margin-right: 5px;
+    }
+
+    img {
+
+      position: relative;
+      z-index: 100;
+
+    }
+
+    span:after {
+      content: "";
+      display: block;
+      width: 72%;
+      position: absolute;
+      border-bottom: 14px solid #FFEE56;
+      bottom: 7px;
+      left: 0px;
+      z-index: -1;
+      transform: rotate(-3deg);
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+    }
+  }
+
+  &__link {
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #444 !important;
+    border: 2px solid #444;
+    border-radius: 20px;
+    font-size: 12px;
+
+    @include sp {
+      padding: 8px 15px;
+      font-size: 10px;
+    }
+  }
+
+  mat-icon {
+    font-size: 14px;
+    top: 2px;
+    position: relative;
+
+    @include sp {
+      top: 3px;
+    }
+  }
+
+
+}
+
+.form {
+  max-width: 800px;
+
+  &__item {
+    margin-bottom: 24px;
+  }
+
+  &__label {
+    font-size: 12px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  &__footer {
+    text-align: left;
+  }
+
+  &__name-input {
+    width: 100%;
+  }
+
+  &__desc-input {
+    width: 100%;
+  }
+
+  &__radio-group {
+    margin-bottom: 48px;
+    display: block;
+
+  }
+
+  &__radio-item {
+    margin-right: 24px;
+  }
+
+}
