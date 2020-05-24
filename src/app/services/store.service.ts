@@ -23,8 +23,16 @@ export class StoreService {
     return this.db.collection<User>('users').valueChanges();
   }
 
+  // getStores(): Observable<Store[]> {
+  //   return this.db.collection<Store>('stores').valueChanges();
+  // }
+
   getStores(): Observable<Store[]> {
-    return this.db.collection<Store>('stores').valueChanges();
+    return this.db
+      .collection<Store>('stores', (ref) => {
+        return ref.orderBy('createdAt', 'desc').limit(10);
+      })
+      .valueChanges();
   }
 
   // getSlides() {
