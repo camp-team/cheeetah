@@ -99,6 +99,7 @@
 
 .form {
   max-width: 800px;
+  margin-bottom: 40px;
 
   &__item {
     margin-bottom: 24px;
@@ -123,13 +124,13 @@
   }
 
   &__radio-group {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     display: block;
 
   }
 
   &__radio-item {
-    margin-right: 24px;
+    margin: 0 24px 8px 0;
   }
 
 }
