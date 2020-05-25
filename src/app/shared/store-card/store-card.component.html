@@ -1,5 +1,4 @@
 <div class="store-cards">
-  <!-- <div class="store-card" *ngFor="let number of storeNumbers"> -->
   <div class="store-card" *ngFor="let store of stores$ | async">
     <a routerLink="/" class="store-card__link">
       <div class="store-card__slides">
@@ -11,10 +10,6 @@
           </div>
           <swiper [config]="config" [(index)]="storeSlideId[store]">
             <div *ngFor="let slide of [1, 2, 3]">
-              <!-- <img
-                src="https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-                alt=""
-              /> -->
               <img
                 src="assets/img/sample/slide_{{
                   store.slide | number: '2.0'
@@ -28,7 +23,6 @@
       <div class="store-card__head">
         <div class="store-card__name">
           <p>{{ store.name }}</p>
-          <!-- <p>tricia 表参道 トリシア ネイルサロン</p> -->
         </div>
         <div class="store-card__avatar">
           <img src="assets/img/sample/slide_01.png" alt="" />
@@ -38,7 +32,6 @@
         <div class="store-card__desc">
           <p>
             {{ store.description }}
-            <!-- 緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。緊急事態宣言に伴い小規模人数にて営業を継続しております。 -->
           </p>
         </div>
         <div class="store-card__info">
@@ -53,7 +46,6 @@
             </ul>
           </div>
           <div class="store-card__category">
-            <!-- <p>#ネイルサロン</p> -->
             <p>#{{ store.category }}</p>
           </div>
         </div>
@@ -61,21 +53,3 @@
     </a>
   </div>
 </div>
-
-<!-- <div>
-  <ul>
-    <li *ngFor="let a of slides$ | async">{{ a.slide }}</li>
-  </ul>
-</div> -->
-
-<!-- <div>
-  <ul>
-    <li *ngFor="let store of stores$ | async">{{ store.name }}</li>
-  </ul>
-</div> -->
-
-<!-- <div>
-  <ul>
-    <li *ngFor="let user of users$ | async">{{ user.uid }}</li>
-  </ul>
-</div> -->

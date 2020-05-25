@@ -11,8 +11,6 @@ import { firestore } from 'firebase';
   providedIn: 'root',
 })
 export class StoreService {
-  // uid = 'v2mtzA22CafleGVjOt5P';
-
   constructor(
     private db: AngularFirestore,
     private snackBar: MatSnackBar,
@@ -34,10 +32,6 @@ export class StoreService {
       })
       .valueChanges();
   }
-
-  // getSlides() {
-  //   return this.db.collection<StoreSlide>(`stores/uid/slides`).valueChanges();
-  // }
 
   createStore(store: Omit<Store, 'storeId' | 'createdAt'>) {
     const storeId = this.db.createId();
