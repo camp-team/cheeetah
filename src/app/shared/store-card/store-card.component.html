@@ -16,7 +16,9 @@
                 alt=""
               /> -->
               <img
-                src="assets/img/slide_{{ store.slide | number: '2.0' }}.png"
+                src="assets/img/sample/slide_{{
+                  store.slide | number: '2.0'
+                }}.png"
                 alt=""
               />
             </div>
@@ -29,7 +31,7 @@
           <!-- <p>tricia 表参道 トリシア ネイルサロン</p> -->
         </div>
         <div class="store-card__avatar">
-          <img src="assets/img/slide_01.png" alt="" />
+          <img src="assets/img/sample/slide_01.png" alt="" />
         </div>
       </div>
       <div class="store-card__body">
@@ -51,7 +53,8 @@
             </ul>
           </div>
           <div class="store-card__category">
-            <p>#ネイルサロン</p>
+            <!-- <p>#ネイルサロン</p> -->
+            <p>#{{ store.category }}</p>
           </div>
         </div>
       </div>

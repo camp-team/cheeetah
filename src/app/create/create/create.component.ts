@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CreateComponent implements OnInit {
   form = this.fb.group({
     name: ['', [Validators.required, Validators.maxLength(40)]],
-    category: ['', [Validators.required, Validators.pattern(/nail|eye/)]],
+    category: ['', [Validators.required]],
     description: ['', [Validators.required, Validators.maxLength(200)]],
     slide: ['', [Validators.required, Validators.pattern(/1|2|3|4|5/)]],
   });
