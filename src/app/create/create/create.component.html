@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="heading">
+    <h2 class="heading__title">
+      <em>ストアを開設する</em>
+    </h2>
+  </div>
+  <div class="form">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form__item">
+        <p class="form__label">1. ストアの名称を入力してください</p>
+        <mat-form-field class="form__name-input" appearance="outline">
+          <mat-label>ストアの名称</mat-label>
+          <input
+            formControlName="name"
+            placeholder="例）CHEEETAH SALON"
+            type="text"
+            matInput
+            autocomplete="off"
+            required
+          />
+          <mat-error *ngIf="nameControl.hasError('required')">
+            必須入力です
+          </mat-error>
+          <mat-error *ngIf="name.invalid && !nameControl.hasError('required')">
+            40文字以内にしてください
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form__item">
+        <p class="form__label">2. サービスカテゴリーを選択してください</p>
+        <mat-radio-group formControlName="category" class="form__radio-group">
+          <mat-radio-button class="form__radio-item" value="ネイルサロン">
+            ネイルサロン
+          </mat-radio-button>
+          <mat-radio-button class="form__radio-item" value="アイラッシュ">
+            アイラッシュサロン
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form__item">
+        <p class="form__label">3. ストアの紹介文を入力してください</p>
+        <mat-form-field class="form__desc-input" appearance="outline">
+          <mat-label>ストアの紹介文</mat-label>
+          <textarea
+            formControlName="description"
+            placeholder="例）ファッションのトレンドを取り入れたデザインから、定番&シンプルまで、お客様のご要望を丁寧にカウンセリングすることで、まだ出会ったことのない「新しいわたし」をご提案します"
+            type="text"
+            matInput
+            autocomplete="off"
+            required
+          ></textarea>
+          <mat-error *ngIf="descControl.hasError('required')">
+            必須入力です
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form__item">
+        <p class="form__label">4. ストアの写真をアップロードしてください</p>
+        <mat-radio-group formControlName="slide" class="form__radio-group">
+          <mat-radio-button class="form__radio-item" value="1">
+            Picture 1
+          </mat-radio-button>
+          <mat-radio-button class="form__radio-item" value="2">
+            Picture 2
+          </mat-radio-button>
+          <mat-radio-button class="form__radio-item" value="3">
+            Picture 3
+          </mat-radio-button>
+          <mat-radio-button class="form__radio-item" value="4">
+            Picture 4
+          </mat-radio-button>
+          <mat-radio-button class="form__radio-item" value="5">
+            Picture 5
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="form__footer">
+        <button [disabled]="form.invalid" mat-raised-button color="primary">
+          ストアを開設する
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

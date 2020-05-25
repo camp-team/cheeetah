@@ -27,12 +27,32 @@
     margin-bottom: 16px;
   }
 
+  &__loggedin {
+    margin-bottom: 16px;
+  }
+
   &__signup-button {
     width: 32px;
     padding: 8px;
     background-color: $color-gray;
     border-radius: 8px;
     margin: 0 auto;
+
+    button {
+      padding: 2px;
+    }
+  }
+
+  &__loggedin-button {
+    width: 32px;
+    padding: 8px 8px 5px 8px;
+    background-color: $color-gray;
+    border-radius: 8px;
+    margin: 0 auto;
+
+    button {
+      padding: 2px;
+    }
   }
 
   &__status {
@@ -72,10 +92,27 @@
       border: 1px gray;
     }
 
-    span {
+    p {
       color: #888;
       font-size: 10px;
       font-weight: 700;
+    }
+  }
+
+  &__order {
+    padding: 8px;
+    margin-top: 8px;
+
+    button {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 10px;
+      margin: 0 auto 5px;
+      background: $color-yellow;
+      padding: 8px 13px;
+      border-radius: 5px;
+      border: 1px gray;
     }
   }
 }

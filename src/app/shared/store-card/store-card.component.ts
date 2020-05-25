@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-store-card',
@@ -22,7 +23,11 @@ export class StoreCardComponent implements OnInit {
   storeSlideId = 1;
   storeNumbers = [...Array(6)].map((_, i) => i + 1);
 
-  constructor() {}
+  stores$ = this.storeService.getStores();
+  users$ = this.storeService.getUsers();
+  // slides$ = this.storeService.getSlides();
+
+  constructor(private storeService: StoreService) {}
 
   ngOnInit(): void {}
 }
