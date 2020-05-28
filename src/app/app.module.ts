@@ -20,6 +20,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [
@@ -44,8 +46,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AngularFirestoreModule,
     MatMenuModule,
     MatSnackBarModule,
+    AngularFireAuthModule,
+    AngularFireFunctionsModule,
   ],
-  providers: [],
+  providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
