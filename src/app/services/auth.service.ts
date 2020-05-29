@@ -14,6 +14,7 @@ import { User } from '@interfaces/user';
 export class AuthService {
   uid: string;
   userLoginStatus: boolean;
+  ownerLoginStatus: boolean;
 
   user$: Observable<User> = this.afAuth.authState.pipe(
     switchMap((afUser) => {
@@ -59,7 +60,34 @@ export class AuthService {
         this.db.doc(`users/${result.user.uid}`).set(userData);
         localStorage.setItem('Status', 'User');
         this.userLoginStatus = true;
-        this.snackBar.open('ようこそ!', null, {
+        this.snackBar.open('Hello!ログインしました 🎉', null, {
+          duration: 2000,
+        });
+        this.router.navigateByUrl('/');
+      })
+      .catch((error) => {
+        this.snackBar.open(`${error},ログインに失敗しました。`, null, {
+          duration: 2000,
+        });
+      });
+  }
+
+  loginOwner() {
+    this.afAuth
+      .signInWithPopup(new auth.GoogleAuthProvider())
+      .then((result) => {
+        const OwnerData = {
+          uid: result.user.uid,
+          status: 'owner',
+          email: result.user.email,
+          name: result.user.displayName,
+          avatarURL: result.user.photoURL,
+          createdAt: firestore.Timestamp.now(),
+        };
+        this.db.doc(`users/${result.user.uid}`).set(OwnerData);
+        localStorage.setItem('Status', 'Owner');
+        this.ownerLoginStatus = true;
+        this.snackBar.open('オーナーとしてログインしました!', null, {
           duration: 2000,
         });
         this.router.navigateByUrl('/');

@@ -104,9 +104,31 @@
     </div>
   </a>
 
-  <div class="side-buttom">
-    <a routerLink="/" class="side-banner">
-      <img src="../../assets/img/banner.svg" alt="" />
+  <ng-container *ngIf="userLoginStatus">
+    <h3 matSubheader>Dashboard</h3>
+    <a mat-list-item routerLink="/">
+      <mat-icon mat-list-icon>offline_bolt</mat-icon>
+      <div class="mat-list-text">
+        <span mat-line>userのみ表示</span>
+      </div>
     </a>
+  </ng-container>
+
+  <ng-container *ngIf="ownerLoginStatus">
+    <h3 matSubheader>Dashboard</h3>
+    <a mat-list-item routerLink="/create">
+      <mat-icon mat-list-icon>fiber_new</mat-icon>
+      <div class="mat-list-text">
+        <span mat-line>ストアの作成</span>
+      </div>
+    </a>
+  </ng-container>
+
+  <div class="side-buttom">
+    <div class="side-banner">
+      <button (click)="loginOwner()">
+        <img src="../../assets/img/banner.svg" alt="" />
+      </button>
+    </div>
   </div>
 </mat-nav-list>
