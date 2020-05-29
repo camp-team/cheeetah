@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   login() {
-    this.authService.login();
+    this.authService.loginUser();
   }
 
   logout(uid: string) {
