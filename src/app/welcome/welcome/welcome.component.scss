@@ -84,6 +84,11 @@
       padding: 8px 15px;
       font-size: 10px;
     }
+
+    @include xs {
+      padding: 8px 8px;
+      font-size: 8px;
+    }
   }
 
   mat-icon {
@@ -93,6 +98,11 @@
 
     @include sp {
       top: 3px;
+    }
+
+    @include xs {
+      top: 2px;
+      font-size: 11px;
     }
   }
 
