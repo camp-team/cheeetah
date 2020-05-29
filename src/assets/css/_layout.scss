@@ -1,6 +1,8 @@
 $breakpoint-xs: 350px;
 $breakpoint-sp: 425px;
 $breakpoint-tab: 768px;
+$breakpoint-lg: 1025px;
+$breakpoint-xl: 1400px;
 $breakpoint-pc: 426px;
 
 @mixin xs {
@@ -17,6 +19,18 @@ $breakpoint-pc: 426px;
 
 @mixin tab {
   @media screen and (max-width: $breakpoint-tab) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: $breakpoint-xl) {
     @content;
   }
 }

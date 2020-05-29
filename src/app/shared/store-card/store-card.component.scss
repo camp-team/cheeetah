@@ -23,6 +23,14 @@
   gap: 24px;
   margin-bottom: 40px;
 
+  @include xl {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(auto-fill, 330px);
+  }
+
   @include sp {
     grid-template-columns: 1fr;
   }
@@ -35,6 +43,10 @@
   width: 340px;
   margin: 0 auto;
   position: relative;
+
+  @include xl {
+    width: 320px;
+  }
 
   @include xs {
     width: 280px;
