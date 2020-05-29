@@ -13,7 +13,7 @@
           mat-mini-fab
           [matMenuTriggerFor]="menu"
         >
-          <img src="../../assets/img/panther.svg" alt="" />
+          <img [src]="user.avatarURL" alt="" />
         </div>
       </div>
       <mat-menu #menu="matMenu">
