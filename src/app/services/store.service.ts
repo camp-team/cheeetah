@@ -21,16 +21,16 @@ export class StoreService {
     return this.db.collection<User>('users').valueChanges();
   }
 
-  // getStores(): Observable<Store[]> {
-  //   return this.db.collection<Store>('stores').valueChanges();
-  // }
-
   getStores(): Observable<Store[]> {
     return this.db
       .collection<Store>('stores', (ref) => {
         return ref.orderBy('createdAt', 'desc').limit(10);
       })
       .valueChanges();
+  }
+
+  getStoreById(storeId: string): Observable<Store> {
+    return this.db.doc<Store>(`stores/${storeId}`).valueChanges();
   }
 
   createStore(store: Omit<Store, 'storeId' | 'createdAt'>) {
