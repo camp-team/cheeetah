@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { StoreService } from 'src/app/services/store.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./create.component.scss'],
 })
 export class CreateComponent implements OnInit {
+  isComplete: boolean;
+
   form = this.fb.group({
     name: ['', [Validators.required, Validators.maxLength(40)]],
     category: ['', [Validators.required]],
@@ -28,6 +30,14 @@ export class CreateComponent implements OnInit {
     return this.form.get('name');
   }
 
+  @HostListener('window:beforeunload', ['$event'])
+  unloadNotification($event: any) {
+    if (this.form.dirty) {
+      $event.preventDefault();
+      $event.returnValue = '作業中の内容が失われますがよろしいですか？';
+    }
+  }
+
   constructor(
     private fb: FormBuilder,
     private storeService: StoreService,
@@ -38,6 +48,7 @@ export class CreateComponent implements OnInit {
 
   submit() {
     console.log(this.form.value);
+    this.isComplete = true;
 
     const formData = this.form.value;
     this.storeService.createStore({
