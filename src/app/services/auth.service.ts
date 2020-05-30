@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { User } from '@interfaces/user';
+import { Status } from '@interfaces/status';
 
 @Injectable({
   providedIn: 'root',
@@ -31,9 +32,13 @@ export class AuthService {
     private router: Router,
     private db: AngularFirestore,
     private snackBar: MatSnackBar
-  ) {}
+  ) {
+    this.user$.subscribe((user) => {
+      this.uid = user && user.uid;
+    });
+  }
 
-  loginAnonymou() {
+  loginAnonymous() {
     return this.afAuth.signInAnonymously().then((result) => {
       this.db.doc(`users/${result.user.uid}`).set({
         uid: result.user.uid,
@@ -106,5 +111,13 @@ export class AuthService {
       });
     });
     this.router.navigateByUrl('/');
+  }
+
+  getLoginUser(uid: string): Observable<Status> {
+    return this.db.doc<Status>(`users/${uid}`).valueChanges();
+  }
+
+  getLoginOwner(uid: string): Observable<Status> {
+    return this.db.doc<Status>(`users/${uid}`).valueChanges();
   }
 }
