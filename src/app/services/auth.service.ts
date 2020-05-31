@@ -60,6 +60,7 @@ export class AuthService {
           email: result.user.email,
           name: result.user.displayName,
           avatarURL: result.user.photoURL,
+          isOwner: false,
           createdAt: firestore.Timestamp.now(),
         };
         this.db.doc(`users/${result.user.uid}`).set(userData);
@@ -87,6 +88,7 @@ export class AuthService {
           email: result.user.email,
           name: result.user.displayName,
           avatarURL: result.user.photoURL,
+          isOwner: true,
           createdAt: firestore.Timestamp.now(),
         };
         this.db.doc(`users/${result.user.uid}`).set(OwnerData);
