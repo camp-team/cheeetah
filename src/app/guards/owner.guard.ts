@@ -16,7 +16,7 @@ import { Route } from '@angular/compiler/src/core';
 @Injectable({
   providedIn: 'root',
 })
-export class OwnerGuard implements CanActivate {
+export class OwnerGuard implements CanActivate, CanLoad {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(
@@ -31,6 +31,18 @@ export class OwnerGuard implements CanActivate {
       this.router.navigateByUrl('/');
       return false;
     }
+    return true;
+  }
+
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]
+  ): Observable<boolean> | Promise<boolean> | boolean {
+    if (!this.authService.ownerLoginStatus) {
+      this.router.navigateByUrl('/');
+      return false;
+    }
+    take(1);
     return true;
   }
 }
