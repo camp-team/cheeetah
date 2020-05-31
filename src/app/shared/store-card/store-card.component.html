@@ -8,7 +8,7 @@
               <mat-icon>favorite</mat-icon>
             </button>
           </div>
-          <swiper [config]="config" [(index)]="store.storeId">
+          <swiper [config]="config" [(index)]="store.ownerId">
             <div *ngFor="let slide of [1, 2, 3]">
               <img
                 src="assets/img/sample/slide_{{

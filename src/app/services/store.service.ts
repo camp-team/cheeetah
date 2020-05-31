@@ -24,7 +24,7 @@ export class StoreService {
   getStores(): Observable<Store[]> {
     return this.db
       .collection<Store>('stores', (ref) => {
-        return ref.orderBy('createdAt', 'desc').limit(10);
+        return ref.orderBy('createdAt', 'desc').limit(15);
       })
       .valueChanges();
   }

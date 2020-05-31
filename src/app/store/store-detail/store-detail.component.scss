@@ -1,0 +1,308 @@
+@import 'layout';
+@import 'variables';
+@import 'mixins';
+
+@import '~swiper/dist/css/swiper.min.css';
+
+
+.container {
+  padding: 40px;
+
+  @include sp {
+    padding: 16px;
+  }
+}
+
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    font-weight: 500;
+
+    &:after {
+      content: '-';
+      padding: 0 8px 0 4px;
+      color: #777777;
+      font-size: 12px;
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+
+    a {
+      display: inline-block;
+      padding: 4px 4px 4px 0;
+      color: #777777;
+      font-size: 12px;
+    }
+
+    a:hover {
+      color: #192226;
+    }
+
+  }
+
+  &__current {
+    @include sp {
+      display: none;
+    }
+  }
+}
+
+
+.store-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  gap: 24px;
+  margin-bottom: 40px;
+
+  @include xl {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+
+  @include lg {
+    grid-template-columns: repeat(auto-fill, 330px);
+  }
+
+  @include sp {
+    grid-template-columns: 1fr;
+  }
+}
+
+.store-card {
+  width: 500px;
+  position: relative;
+
+  @include xl {
+    width: 320px;
+  }
+
+  @include xs {
+    width: 280px;
+  }
+
+  &__link {
+    color: #111;
+  }
+
+  &__slides {
+    position: relative;
+    margin: 24px 24px 24px 0px;
+  }
+
+  &__fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 100%;
+    font-weight: 700;
+    text-align: center;
+    -webkti-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    mat-icon {
+      color: #F85656;
+      font-size: 19px;
+    }
+
+    @include sp {
+      padding: 5px 0;
+    }
+  }
+
+
+  &__slide {
+
+    img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  &__thumbnails {
+    padding-bottom: 52.5%;
+    display: block;
+    background: #eee center/cover;
+    background-image: url(https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px 6px 0px;
+    margin-bottom: 0px;
+
+    @include xs {
+      padding: 8px 24px 6px;
+    }
+  }
+
+  &__name {
+
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      width: 250px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @include xl {
+        width: 240px;
+      }
+
+      @include lg {
+        width: 240px;
+      }
+
+      @include sp {
+        width: 240px;
+      }
+
+      @include xs {
+        width: 210px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__avatar {
+    border-radius: 30%;
+    width: 24px;
+    height: 24px;
+    background: #eee center/cover;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+      border-radius: 30%;
+    }
+  }
+
+  &__body {
+    padding: 0 24px 0 0;
+  }
+
+  &__desc {
+    color: #999;
+    font-size: 12px;
+    @include text-truncate(12, 1.3, 2, none);
+
+    @include xs {
+      font-size: 11px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 8px;
+  }
+
+  &__time {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-right: 0px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+
+    @include xs {
+      font-size: 10px;
+    }
+
+    span {
+      font-size: 11px;
+    }
+  }
+
+  &__rating {
+    margin-right: 8px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+
+    li {
+      font-size: 14px;
+
+      @include xs {
+        font-size: 10px;
+      }
+    }
+
+    .mat-icon {
+      font-size: 20px;
+      color: rgb(244, 211, 49);
+      padding-top: 0px;
+      margin-right: 0px;
+    }
+
+  }
+
+  &__score {
+    padding-right: 4px;
+
+    @include xs {
+      font-size: 10px;
+    }
+  }
+
+  &__spacer {
+    flex: 1;
+  }
+
+  &__category {
+    font-size: 13px;
+    padding-top: 1px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #999;
+
+    @include sp {
+      padding-top: 2px;
+    }
+
+    @include xs {
+      font-size: 10px;
+    }
+  }
+
+}
+
+
+.swiper-slide {
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @include sp {
+      touch-action: pan-x;
+      height: 110px;
+    }
+
+    @include xs {
+      touch-action: pan-x;
+      height: 110px;
+    }
+  }
+}

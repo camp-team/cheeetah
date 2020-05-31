@@ -125,12 +125,25 @@
     p {
       font-weight: bold;
       font-size: 16px;
-      width: 260px;
+      width: 250px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
 
+      @include xl {
+        width: 240px;
+      }
+
+      @include lg {
+        width: 240px;
+      }
+
+      @include sp {
+        width: 240px;
+      }
+
       @include xs {
+        width: 210px;
         font-size: 14px;
       }
     }
@@ -258,6 +271,7 @@
     }
 
     @include xs {
+      touch-action: pan-x;
       height: 110px;
     }
   }
