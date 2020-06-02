@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from '@interfaces/user';
 import { Store } from '@interfaces/store';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -37,11 +37,14 @@ export class StoreService {
     const storeId = this.db.createId();
     this.db
       .doc(`stores/${storeId}`)
-      .set({ storeId, ...store, createdAt: firestore.Timestamp.now() })
+      .set({
+        storeId,
+        ...store,
+        createdAt: firestore.Timestamp.now(),
+        updatedAt: firestore.Timestamp.now(),
+      })
       .then(() => {
-        this.snackBar.open('ストアを作成しました', null, {
-          duration: 2000,
-        });
+        this.snackBar.open('ストアを作成しました');
         this.router.navigateByUrl('/');
       });
   }

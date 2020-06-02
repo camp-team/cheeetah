@@ -44,9 +44,7 @@ export class AuthService {
         uid: result.user.uid,
         createdAt: firestore.Timestamp.now(),
       });
-      this.snackBar.open('Hello！🎉', null, {
-        duration: 2000,
-      });
+      this.snackBar.open('Hello！🎉');
     });
   }
 
@@ -66,15 +64,11 @@ export class AuthService {
         this.db.doc(`users/${result.user.uid}`).set(userData);
         localStorage.setItem('Status', 'User');
         this.userLoginStatus = true;
-        this.snackBar.open('Hello!ログインしました 🎉', null, {
-          duration: 2000,
-        });
+        this.snackBar.open('Hello!ログインしました 🎉');
         this.router.navigateByUrl('/');
       })
       .catch((error) => {
-        this.snackBar.open(`${error},ログインに失敗しました。`, null, {
-          duration: 2000,
-        });
+        this.snackBar.open(`${error},ログインに失敗しました。`);
       });
   }
 
@@ -94,23 +88,17 @@ export class AuthService {
         this.db.doc(`users/${result.user.uid}`).set(OwnerData);
         localStorage.setItem('Status', 'Owner');
         this.ownerLoginStatus = true;
-        this.snackBar.open('オーナーとしてログインしました!', null, {
-          duration: 2000,
-        });
+        this.snackBar.open('オーナーとしてログインしました!');
         this.router.navigateByUrl('/');
       })
       .catch((error) => {
-        this.snackBar.open(`${error},ログインに失敗しました。`, null, {
-          duration: 2000,
-        });
+        this.snackBar.open(`${error},ログインに失敗しました。`);
       });
   }
 
   logout(uid: string) {
     this.afAuth.signOut().then(() => {
-      this.snackBar.open('ログアウトしました！🚀', null, {
-        duration: 2000,
-      });
+      this.snackBar.open('ログアウトしました！🚀');
     });
     this.router.navigateByUrl('/');
   }
