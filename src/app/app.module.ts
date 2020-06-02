@@ -19,7 +19,14 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+} from '@angular/material/snack-bar';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,8 +51,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AngularFirestoreModule,
     MatMenuModule,
     MatSnackBarModule,
+    AngularFireAuthModule,
+    AngularFireFunctionsModule,
+    MatTooltipModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: REGION, useValue: 'asia-northeast1' },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2000 } },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

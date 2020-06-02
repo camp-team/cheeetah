@@ -7,5 +7,10 @@ service cloud.firestore {
       allow update: if request.auth.uid == resource.data.owenerId && resource.data.owenerId == request.resource.data.owenerId;
       allow delete: if request.auth.uid == resource.data.owenerId;
     }
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if request.auth.uid != null;
+      allow update: if request.auth.uid != null;
+    }
   }
 }

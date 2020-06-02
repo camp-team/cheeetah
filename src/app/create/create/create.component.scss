@@ -133,4 +133,20 @@
     margin: 0 24px 8px 0;
   }
 
+  &__notification {
+
+    &--danger {
+      color: red;
+    }
+
+    &--success {
+      color: green;
+    }
+
+    &--pending {
+      color: blue
+    }
+
+  }
+
 }

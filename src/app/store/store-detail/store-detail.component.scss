@@ -13,9 +13,45 @@
   }
 }
 
-.heading {
-  margin-bottom: 16px;
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    font-weight: 500;
+
+    &:after {
+      content: '-';
+      padding: 0 8px 0 4px;
+      color: #777777;
+      font-size: 12px;
+    }
+
+    &:last-child:after {
+      content: '';
+    }
+
+    a {
+      display: inline-block;
+      padding: 4px 4px 4px 0;
+      color: #777777;
+      font-size: 12px;
+    }
+
+    a:hover {
+      color: #192226;
+    }
+
+  }
+
+  &__current {
+    @include sp {
+      display: none;
+    }
+  }
 }
+
 
 .store-cards {
   display: grid;
@@ -37,11 +73,7 @@
 }
 
 .store-card {
-  border-radius: 12px;
-  box-shadow: 0 0 20px #eee;
-  overflow: hidden;
-  width: 340px;
-  margin: 0 auto;
+  width: 500px;
   position: relative;
 
   @include xl {
@@ -52,17 +84,13 @@
     width: 280px;
   }
 
-  &:hover {
-    box-shadow: 0 0 10px #ccc;
-  }
-
   &__link {
     color: #111;
   }
 
   &__slides {
     position: relative;
-    margin: 24px 24px 0 24px;
+    margin: 24px 24px 24px 0px;
   }
 
   &__fav {
@@ -113,7 +141,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 24px 6px;
+    padding: 12px 24px 6px 0px;
     margin-bottom: 0px;
 
     @include xs {
@@ -122,6 +150,7 @@
   }
 
   &__name {
+
     p {
       font-weight: bold;
       font-size: 16px;
@@ -164,7 +193,7 @@
   }
 
   &__body {
-    padding: 0 24px;
+    padding: 0 24px 0 0;
   }
 
   &__desc {
@@ -262,12 +291,13 @@
 .swiper-slide {
   img {
     width: 100%;
-    height: 130px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
 
     @include sp {
       touch-action: pan-x;
+      height: 110px;
     }
 
     @include xs {

@@ -1,6 +1,6 @@
 <div class="store-cards">
   <div class="store-card" *ngFor="let store of stores$ | async">
-    <a routerLink="/" class="store-card__link">
+    <a [routerLink]="['/store', store.storeId]" class="store-card__link">
       <div class="store-card__slides">
         <div>
           <div class class="store-card__fav">
@@ -8,7 +8,7 @@
               <mat-icon>favorite</mat-icon>
             </button>
           </div>
-          <swiper [config]="config" [(index)]="storeSlideId[store]">
+          <swiper [config]="config" [(index)]="store.ownerId">
             <div *ngFor="let slide of [1, 2, 3]">
               <img
                 src="assets/img/sample/slide_{{
@@ -45,6 +45,7 @@
               <li class="store-card__reviews">(38)</li>
             </ul>
           </div>
+          <div class="store-card__spacer"></div>
           <div class="store-card__category">
             <p>#{{ store.category }}</p>
           </div>

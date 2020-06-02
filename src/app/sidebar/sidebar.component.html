@@ -1,7 +1,7 @@
 <mat-nav-list>
   <div class="logo-wrap">
     <a routerLink="/" class="logo">
-      <img src="../../assets/img/logo.svg" alt="CHEEETAH" />
+      <img src="assets/img/logo.svg" alt="CHEEETAH" />
     </a>
   </div>
 
@@ -12,8 +12,10 @@
           class="member__loggedin-button"
           mat-mini-fab
           [matMenuTriggerFor]="menu"
+          matTooltip="マイメニューを開く"
+          aria-label="マイメニュー"
         >
-          <img src="../../assets/img/panther.svg" alt="" />
+          <img [src]="user.avatarURL" alt="" />
         </div>
       </div>
       <mat-menu #menu="matMenu">
@@ -38,7 +40,9 @@
 
       <div class="member__status">
         <div class="member__logout">
-          <p>Hello, <span>Anonymous</span></p>
+          <p>
+            Hello, <span>{{ user.name }}</span>
+          </p>
         </div>
         <div class="member__order">
           <a routerLink="/order"><button>いますぐ注文する</button></a>
@@ -69,7 +73,7 @@
   <h3 matSubheader>Search</h3>
   <a mat-list-item routerLink="/">
     <mat-icon mat-list-icon>
-      <img src="../../assets/img/panther.svg" alt="" />
+      <img src="assets/img/panther.svg" alt="" />
     </mat-icon>
     <div class="mat-list-text">
       <span mat-line>ホーム</span>
@@ -102,9 +106,31 @@
     </div>
   </a>
 
-  <div class="side-buttom">
-    <a routerLink="/" class="side-banner">
-      <img src="../../assets/img/banner.svg" alt="" />
+  <ng-container *ngIf="userLoginStatus">
+    <h3 matSubheader>Dashboard</h3>
+    <a mat-list-item routerLink="/">
+      <mat-icon mat-list-icon>offline_bolt</mat-icon>
+      <div class="mat-list-text">
+        <span mat-line>userのみ表示</span>
+      </div>
     </a>
+  </ng-container>
+
+  <ng-container *ngIf="ownerLoginStatus">
+    <h3 matSubheader>Dashboard</h3>
+    <a mat-list-item routerLink="/create">
+      <mat-icon mat-list-icon>fiber_new</mat-icon>
+      <div class="mat-list-text">
+        <span mat-line>ストアの作成</span>
+      </div>
+    </a>
+  </ng-container>
+
+  <div class="side-buttom">
+    <div class="side-banner">
+      <button (click)="loginOwner()">
+        <img src="assets/img/banner.svg" alt="" />
+      </button>
+    </div>
   </div>
 </mat-nav-list>

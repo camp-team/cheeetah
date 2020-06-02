@@ -1,0 +1,87 @@
+<div class="container" *ngIf="store$ | async as store">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li
+      itemprop="itemListElement"
+      itemscope
+      itemtype="https://schema.org/ListItem"
+    >
+      <a itemprop="item" routerLink="/">
+        <span itemprop="name">ホーム</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li
+      itemprop="itemListElement"
+      itemscope
+      itemtype="https://schema.org/ListItem"
+    >
+      <a itemprop="item" routerLink="/store">
+        <span itemprop="name">ストアリスト</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li
+      itemprop="itemListElement"
+      itemscope
+      itemtype="https://schema.org/ListItem"
+    >
+      <a itemprop="item" [routerLink]="['/store', store.category]">
+        <span itemprop="name">{{ store.category }}</span>
+      </a>
+      <meta itemprop="position" content="3" />
+    </li>
+  </ol>
+
+  <div class="store-card">
+    <div class="store-card__head">
+      <div class="store-card__name">
+        <p>{{ store.name }}</p>
+      </div>
+      <div class="store-card__avatar">
+        <img src="assets/img/sample/slide_01.png" alt="" />
+      </div>
+    </div>
+    <div class="store-card__slides">
+      <div>
+        <div class class="store-card__fav">
+          <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+        <swiper [config]="config" [(index)]="store.ownerId">
+          <div *ngFor="let slide of [1, 2, 3]">
+            <img
+              src="assets/img/sample/slide_{{
+                store.slide | number: '2.0'
+              }}.png"
+              alt=""
+            />
+          </div>
+        </swiper>
+      </div>
+    </div>
+    <div class="store-card__body">
+      <div class="store-card__desc">
+        <p>
+          {{ store.description }}
+        </p>
+      </div>
+      <div class="store-card__info">
+        <div class="store-card__time">
+          <p>25-30 min</p>
+        </div>
+        <div class="store-card__rating">
+          <ul>
+            <li><mat-icon inline>grade</mat-icon></li>
+            <li class="store-card__score">4.5</li>
+            <li class="store-card__reviews">(38)</li>
+          </ul>
+        </div>
+        <div class="store-card__spacer"></div>
+        <div class="store-card__category">
+          <p>#{{ store.category }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

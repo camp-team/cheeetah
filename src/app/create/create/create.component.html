@@ -7,7 +7,51 @@
   <div class="form">
     <form [formGroup]="form" (ngSubmit)="submit()">
       <div class="form__item">
-        <p class="form__label">1. ストアの名称を入力してください</p>
+        <p class="form__label">1. IDを作成してください</p>
+        <mat-form-field class="form__name-input" appearance="outline">
+          <mat-label>StoreIDの作成</mat-label>
+          <input
+            formControlName="storename"
+            placeholder="例）cheeetahsalon"
+            type="username"
+            matInput
+            pattern="^[0-9a-zA-Z\-\_]+[0-9a-zA-Z]$"
+            maxlength="30"
+            autocomplete="off"
+            required
+          />
+          <mat-error *ngIf="storenameControl.hasError('required')">
+            必須入力です
+          </mat-error>
+        </mat-form-field>
+
+        <div
+          *ngIf="
+            !storenameControl.hasError('required') &&
+            storename.invalid &&
+            storename.dirty
+          "
+          class="form__notification--danger"
+        >
+          <p>
+            <strong>{{ storename.value }}</strong> は利用できません
+          </p>
+        </div>
+
+        <div *ngIf="storename.valid" class="form__notification--success">
+          <p>
+            <strong>{{ storename.value }}</strong> を利用できます
+          </p>
+        </div>
+
+        <div *ngIf="storename.pending" class="form__notification--pending">
+          <p>
+            <strong>{{ storename.value }}</strong> をチェック中です
+          </p>
+        </div>
+      </div>
+      <div class="form__item">
+        <p class="form__label">2. ストアの名称を入力してください</p>
         <mat-form-field class="form__name-input" appearance="outline">
           <mat-label>ストアの名称</mat-label>
           <input
@@ -28,7 +72,7 @@
       </div>
 
       <div class="form__item">
-        <p class="form__label">2. サービスカテゴリーを選択してください</p>
+        <p class="form__label">3. サービスカテゴリーを選択してください</p>
         <mat-radio-group formControlName="category" class="form__radio-group">
           <mat-radio-button class="form__radio-item" value="ネイルサロン">
             ネイルサロン
@@ -40,15 +84,15 @@
       </div>
 
       <div class="form__item">
-        <p class="form__label">3. ストアの紹介文を入力してください</p>
+        <p class="form__label">4. ストアの紹介文を入力してください</p>
         <mat-form-field class="form__desc-input" appearance="outline">
           <mat-label>ストアの紹介文</mat-label>
           <textarea
             formControlName="description"
             placeholder="例）ファッションのトレンドを取り入れたデザインから、定番&シンプルまで、お客様のご要望を丁寧にカウンセリングすることで、まだ出会ったことのない「新しいわたし」をご提案します"
-            type="text"
             matInput
             autocomplete="off"
+            matTextareaAutosize
             required
           ></textarea>
           <mat-error *ngIf="descControl.hasError('required')">
@@ -58,7 +102,7 @@
       </div>
 
       <div class="form__item">
-        <p class="form__label">4. ストアの写真をアップロードしてください</p>
+        <p class="form__label">5. ストアの写真をアップロードしてください</p>
         <mat-radio-group formControlName="slide" class="form__radio-group">
           <mat-radio-button class="form__radio-item" value="1">
             Picture 1
@@ -83,6 +127,11 @@
           ストアを開設する
         </button>
       </div>
+      <!-- <div class="form__footer">
+        <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="update()">
+          ストアの変更を適用する
+        </button>
+      </div> -->
     </form>
   </div>
 </div>

@@ -1,8 +1,9 @@
-import { firestore } from 'firebase';
+// import { firestore } from 'firebase';
 
 export interface Store {
-  // storeId: string;
+  storeId?: string;
   ownerId: string;
+  storename: string;
   name: string;
   description: string;
   category: string;
