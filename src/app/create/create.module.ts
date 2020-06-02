@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [CreateComponent],
@@ -20,6 +22,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatFormFieldModule,
     MatButtonModule,
     MatRadioModule,
+    AngularFireModule,
+    AngularFirestoreModule,
   ],
 })
 export class CreateModule {}

@@ -3,6 +3,7 @@
 export interface Store {
   storeId?: string;
   ownerId: string;
+  storename: string;
   name: string;
   description: string;
   category: string;

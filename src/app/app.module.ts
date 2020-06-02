@@ -23,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AngularFireAuthModule,
     AngularFireFunctionsModule,
     MatTooltipModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
